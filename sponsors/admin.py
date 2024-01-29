@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from sponsors import models
+
+
+@admin.register(models.Sponsor)
+class SponsorAdmin(admin.ModelAdmin):
+    list_display = ['title', 'phone', 'amount']
+    readonly_fields = ['created_at', 'updated_at']
