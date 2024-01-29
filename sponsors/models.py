@@ -21,8 +21,8 @@ class Sponsor(BaseModel):
         CASH = 'CH', 'Cash'
         
     
-    title = models.CharField(max_length=255)
-    phone = models.CharField(max_length=14)
+    title = models.CharField(max_length=255, unique=True)
+    phone = models.CharField(max_length=14, unique=True)
     status = models.CharField(max_length=2, 
                               choices=Status.choices,
                               default=Status.NEW)

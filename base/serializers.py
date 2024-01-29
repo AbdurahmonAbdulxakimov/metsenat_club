@@ -19,3 +19,9 @@ class CreditSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Credit
         fields = ['sponsor', 'student', 'amount', 'created_at', 'updated_at']
+        
+        
+class DashboardSerializer(serializers.BaseSerializer):
+    total_paid = serializers.IntegerField()
+    total_required = serializers.IntegerField()
+    total_left = serializers.IntegerField()

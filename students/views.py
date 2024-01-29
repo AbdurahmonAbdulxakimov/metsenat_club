@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from  rest_framework import permissions
+from rest_framework import permissions
 from rest_framework.filters import SearchFilter
 
 from students.models import Student

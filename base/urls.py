@@ -1,8 +1,16 @@
+from django.urls import path
+
 from rest_framework import routers
 
-from base import views
+from base.views import CreditViewSet, DashboardView
 
 router = routers.DefaultRouter()
-router.register(r'credits', views.CreditViewSet, basename='credits')
+router.register(r'credits', CreditViewSet, basename='credits')
 
-urlpatterns = router.urls
+
+urlpatterns = [
+    path('dashboard/', DashboardView.as_view())
+]
+
+
+urlpatterns += router.urls

@@ -21,8 +21,8 @@ class Student(BaseModel):
         PG = 'PG', 'Post Graduate'
         
     
-    title = models.CharField(max_length=255)
-    phone = models.CharField(max_length=14)
+    title = models.CharField(max_length=255, unique=True)
+    phone = models.CharField(max_length=14, unique=True)
     
     university = models.CharField(max_length=4, 
                               choices=University.choices,
